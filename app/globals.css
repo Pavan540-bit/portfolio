@@ -133,3 +133,19 @@
   }
 }
  
+
+.contact-form input {
+    background-color: #fff;
+    color: #171717;
+      display: block;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 30px;
+}
+.contact-form form {
+    width: 600px;
+    margin: auto;
+    background-color: #90a4ae;
+    padding: 45px;
+    border-radius: 25px;
+}

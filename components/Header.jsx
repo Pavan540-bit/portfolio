@@ -5,7 +5,7 @@ import Nav from './Nav';
 
 const Header = () => {
     return (
-        <header className='py-8 xl:py-12 text-white '>
+        <header className='py-8 xl:py-12 text-grey-800 dark:text-gray-200'>
             <div className='container mx-auto flex items-center justify-between'>
                 {/* {logo} */}
                 <Link href='/'>
