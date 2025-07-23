@@ -133,19 +133,65 @@
   }
 }
  
+/* form css starts */
 
-.contact-form input {
+.contact-form .cmm input {
     background-color: #fff;
     color: #171717;
-      display: block;
+      display: inline;
     padding: 10px;
     margin-bottom: 10px;
-    border-radius: 30px;
+    border-radius:15px;
+        width: 240px;
 }
 .contact-form form {
     width: 600px;
     margin: auto;
     background-color: #90a4ae;
     padding: 45px;
-    border-radius: 25px;
+    border-radius: 15px;
 }
+.contact-form button {
+    background-color: #1c1c22;
+    padding: 12px 45px;
+    border-radius: 15px;
+}
+.form-fields-e {
+    display: flex;
+    flex-wrap: wrap;
+}
+.contact-form select {
+    color: #171717;
+    background-color: #fff;
+    border-radius: 15px;
+    margin-bottom: 10px;
+    padding: 10px;
+    display: inline;
+        width: 240px;
+}
+
+.contact-form .message-box {
+    color: #171717;
+    background-color: #fff;
+    border-radius: 15px;
+    margin-bottom: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+@media (max-width:767px){
+  .contact-form form{
+    width: auto;
+    margin: auto 20px;
+    padding: 25px;
+}
+.email-input,p.error-p {
+   margin-left: 0;
+}
+.subject-inpt,.phone-inpt,.message-box,.inquiry-type {
+    margin-top: 0;
+    margin-left: 0;
+}
+}
+/* form css ends */
