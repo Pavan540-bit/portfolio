@@ -192,6 +192,7 @@ html{
     top: 0;
     bottom: 0;
 }
+.contact-form h2,.contact-form p,.terms-check label{color: #1c1c22;}
 @media (max-width:767px){
   .contact-form form{
     width: auto;
@@ -228,3 +229,13 @@ html{
 }
 }
 /* form css ends */
+
+
+/* home page css startrs */
+
+.lft-hme h3 {
+    color: #90a4ae;
+}
+.lft-hme p span{
+  color: #90a4ae;
+}

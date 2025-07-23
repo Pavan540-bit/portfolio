@@ -25,6 +25,7 @@ function MyForm() {
       });
 
       if (response.ok) {
+         console.log("Submitted Form Data:", data);
         setSubmitStatus('success');
         reset();
       } else {
