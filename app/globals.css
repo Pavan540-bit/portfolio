@@ -153,7 +153,7 @@ html{
     padding: 45px;
     border-radius: 15px;
 }
-.contact-form button {
+.contact-form button.submit {
     background-color: #1c1c22;
     padding: 12px 45px;
     border-radius: 15px;
@@ -182,8 +182,15 @@ html{
     flex-direction: column;
     width: 100%;
 }
-p.error-p {
+.contact-form .relative{
     width: 240px;
+}
+.terms-check .relative{
+    width: auto;
+}
+.contact-form button.absolute{
+    top: 0;
+    bottom: 0;
 }
 @media (max-width:767px){
   .contact-form form{
@@ -194,9 +201,30 @@ p.error-p {
 .email-input,p.error-p {
    margin-left: 0;
 }
-.subject-inpt,.phone-inpt,.message-box,.inquiry-type {
+.subject-inpt,.phone-inpt,.message-box,.inquiry-type ,.fdfdf{
     margin-top: 0;
     margin-left: 0;
+}
+
+.contact-form select {
+    width: 100%;
+    margin-top:20px;
+}
+
+.contact-form .cmm input,.contact-form .message-box {
+    width: 100%;
+    margin-top:20px;
+}
+
+.form-fields-e {
+    display: block;
+}
+
+.eml.cmm {
+    margin-left: 0;
+}
+.contact-form .relative {
+    width: auto;
 }
 }
 /* form css ends */
