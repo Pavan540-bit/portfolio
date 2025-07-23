@@ -2,13 +2,46 @@
 
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import { useState,useEffect } from 'react';
 
 function MyForm() {
-    const { register, handleSubmit, formState: { errors } } = useForm();
+    const { register, handleSubmit,reset,  formState: { errors , isSubmitting} } = useForm();
 
-    const onSubmit = (data) => {
-        console.log('Form Data:', data);
+    const [submitStatus, setSubmitStatus] = useState(null); // success | error | null
+
+    const onSubmit = async (data) => {
+        try {
+            const response = await fetch('https://formspree.io/f/xovlelyl', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
+            });
+
+            if (response.ok) {
+                setSubmitStatus('success');
+                reset();
+            } else {
+                setSubmitStatus('error');
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            setSubmitStatus('error');
+        }
     };
+
+
+useEffect(() => {
+    if (submitStatus) {
+        const timeout = setTimeout(() => {
+            setSubmitStatus(null);
+        }, 5000);
+        return () => clearTimeout(timeout);
+    }
+}, [submitStatus]);
+
+
 
     return (
         <>
@@ -110,6 +143,16 @@ function MyForm() {
 
                     </div>
                     <button className='mt-4' type="submit">Submit</button>
+
+                     {/* Status message */}
+            <div className="mt-4">
+                {submitStatus === 'success' && (
+                    <p className="text-green-600 font-semibold">✅ Your message was sent successfully!</p>
+                )}
+                {submitStatus === 'error' && (
+                    <p className="text-red-600 font-semibold">❌ Something went wrong. Please try again later.</p>
+                )}
+            </div>
                 </form>
             </section>
         </>

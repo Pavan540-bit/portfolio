@@ -180,6 +180,9 @@
     flex-direction: column;
     width: 100%;
 }
+p.error-p {
+    width: 240px;
+}
 @media (max-width:767px){
   .contact-form form{
     width: auto;
