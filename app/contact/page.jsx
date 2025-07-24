@@ -5,7 +5,7 @@ import { useForm } from 'react-hook-form';
 import { useState, useEffect } from 'react';
 import countriesData from 'world-countries';
 
-function MyForm() {
+function MyForm({children}) {
   const {
     register,
     handleSubmit,
@@ -65,6 +65,7 @@ function MyForm() {
   };
 
   return (
+     <body className="page-contact">
     <>
       <section className='container mx-auto py-4 contact-form'>
         <form onSubmit={handleSubmit(onSubmit)}>
@@ -202,6 +203,7 @@ function MyForm() {
         </form>
       </section>
     </>
+   </body>
   );
 }
 

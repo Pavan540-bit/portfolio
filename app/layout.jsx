@@ -1,8 +1,11 @@
+
 import { JetBrains_Mono } from "next/font/google";
 import "./menu.css";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+
+
 
 const JetBrains = JetBrains_Mono({
   variable: "--font-JetBrains",
@@ -17,6 +20,7 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+
   return (
     <html lang="en" suppressHydrationWarning>
       <body
