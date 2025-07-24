@@ -1,0 +1,12 @@
+header {
+    position: sticky;
+    width: 100%;
+    top: 0;
+    background-color: #1c1c22;
+    z-index: 99;
+}
+
+header button {
+      color: oklch(.205 0 0);
+    background-color: #90a4ae;
+}

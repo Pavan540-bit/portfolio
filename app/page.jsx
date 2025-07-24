@@ -1,10 +1,36 @@
+'use client';
 import Image from "next/image";
+import { use, useEffect } from "react";
 
 export default function Home() {
+
+
+useEffect(() => {
+      const counters = document.querySelectorAll('.number');
+    const speed = 100; // lower = faster
+    counters.forEach(counter => {
+      const updateCount = () => {
+        const target = +counter.getAttribute('data-target');
+        const count = +counter.innerText;
+
+        const increment = Math.ceil(target / speed);
+
+        if (count < target) {
+          counter.innerText = count + increment;
+          setTimeout(updateCount, 20);
+        } else {
+          counter.innerText = target;
+        }
+      };
+
+      updateCount();
+    });
+},[]);
+
   return (
     <>
       <main>
-        <section className="container mx-auto py-12">
+        <section className="container mx-auto py-12 pb-5">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* Left Side */}
             <div className="lft-hme rounded shadow">
@@ -24,6 +50,25 @@ export default function Home() {
                 JavaScript, Bootstrap, and jQuery. I develop modern web apps with React and Next.js,
                 focusing on clean code, performance, and seamless user experiences.
               </p>
+
+              <div className="download-btn mt-6">
+                <a href="" className="cta-resume">Download CV</a>
+                <a href="">  <Image
+                  src="/assets/github-logo.png"
+                  alt="Profile"
+                  width={300}
+                  height={300}
+                  className="object-cover w-full h-full social-icon"
+                /></a>
+                <a href="">  <Image
+                  src="/assets/linkedin.png"
+                  alt="Profile"
+                  width={300}
+                  height={300}
+                  className="object-cover w-full h-full social-icon"
+                /></a>
+
+              </div>
             </div>
 
             {/* Right Side: Circular Image with Rotating Dotted Ring */}
@@ -62,9 +107,31 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        <section className="numbers container mx-auto ">
+          <div className="grid">
+            <div className="stat">
+              <div className="number" data-target="5">0</div>
+              <div className="label">Years Experience</div>
+            </div>
+            <div className="stat">
+              <div className="number" data-target="15">0</div>
+              <div className="label">Projects</div>
+            </div>
+            <div className="stat">
+              <div className="number" data-target="35">0</div>
+              <div className="label">Clients</div>
+            </div>
+            <div className="stat">
+              <div className="number" data-target="10">0</div>
+              <div className="label">Team Members</div>
+            </div>
+          </div>
+        </section>
       </main>
 
-   
+
     </>
+    
   );
 }
