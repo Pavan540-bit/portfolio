@@ -381,3 +381,17 @@ a.cta-resume {
       font-size: 1.1rem;
       color: #555;
     }
+
+
+    @media (max-width: 767px) {
+      .numbers .grid {
+        grid-template-columns: 1fr;
+      }
+      .right-hme.relative
+ {
+    width: auto;
+}
+section.container {
+    padding: 0 25px;
+}
+    }
